@@ -3089,8 +3089,9 @@ color: white;
 function offline() {
 const n = 10000;
 for (let i = 1; i <= n; i++) {
-    alert("No Network");
+    confirm("No Network");
     prompt("ErrorCode:","0593855");
+      
     console.error("Code:404   ErrorObjectMeko ,'Meko://588294dedoteu.ruby'");
   }
 }
@@ -3121,6 +3122,39 @@ console.error("Server Acces is greed")
 console.log("Server Refreshing...")
 console.warn("User='Id-1'")
 
+        function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
 </script>
 </html>
