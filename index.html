@@ -14,9 +14,11 @@
 <figure>
 </figure>
 
-<button id="login" onclick="login()">LOG IN</button>
-
-
+<button class="login" id="login1">LOG IN</button>
+<button class="login" id="signout">SignOut</button>
+<div id="message">
+<keygen>Your Account has been Created✅</keygen>
+</div>
 <center>
   <h4>Fyp (Refresh Per 24H)</h4>
 </center>
@@ -138,7 +140,7 @@ background-color:#1e2124;
     background-color:#1e2124;
     border-radius: 1px;
   }
-  #login {
+  .login {
     padding: 10px;
     border-color: blue;
     background-color: #293;
@@ -178,4 +180,67 @@ localstorage("login").load("")
  
 </script>
 <figure></figure>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD8F3kR18lOZWwQbMjSZvS0uYvCbPGV0SY",
+    authDomain: "auth-ac8f9.firebaseapp.com",
+    projectId: "auth-ac8f9",
+    storageBucket: "auth-ac8f9.appspot.com",
+    messagingSenderId: "592868881377",
+    appId: "1:592868881377:web:9287ec1426236446cb98a0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const Auth = getAuth();
+  const provider = new GoogleAuthProvider()
+  const login1 = document.getElementById("login1");
+const signout = document.getElementById("signout");
+const message = document.getElementById("message");
+
+signout.style.display = "none";
+message.style.display = "none";
+
+const userLogin = async() => {
+  signInWithPopup(Auth, provider)
+  .then((result) => {
+    const user = result.user
+    console.log(user);
+    }).catch((error) => {
+      
+     const errorCode = error.code;
+     const errorMessage = error.message
+     })
+}
+
+const userSignOut = async() => {
+  signout(Auth).then(() => {
+    alert("You Have Been SignOut✅");
+  }).catch((error) => {})
+}
+
+onAuthStateChanged(Auth, (user) => {
+  if(user) {
+   signout.style.display = "block";
+message.style.display = "block";
+  }else {
+signout.style.display = "none";
+message.style.display = "none";
+  }
+  
+})
+
+
+login1.addEventListener("click", userLogin);
+signout.addEventListener("click", userSignOut);
+  </script>
   
