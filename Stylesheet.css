@@ -1,0 +1,35 @@
+body {
+  color: white;
+  background-color: #399;
+  text-shadow: 3px 3px 3px black;
+}
+#Box {
+  background-color: #393;
+  border-radius: 15px;
+  border: 0px;
+  margin: 1px;
+  box-shadow: 6px 5px 5px black;
+ 
+}
+#img {
+  border-radius: 15px;
+box-shadow: 6px 5px 5px black;
+}
+#PLAY {
+  background-color: Green;
+  width: 300px;
+  height: 50px;
+  margin: 0px;
+  border-radius: 15px;
+  border: 0px;
+  color: white;
+}
+#PLAY:hover {
+  background-color: grey;
+  width: 300px;
+  height: 50px;
+  margin: 0px;
+  border-radius: 15px;
+  border: 0px;
+  color: white;
+}
