@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+<button></button>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://cdn.discordapp.com/attachments/1182306976710012952/1244310319677833226/6664427.png?ex=6654a5ca&is=6653544a&hm=7404e9566559d0172f4b1577373f12559a64ffc48f3fa7e176a2610e8f5c284d& "alt="desktop computer" />
+          </div>
+          <div class="card-content">
+            <h1>FREE CODES </h1>
+            <button onclick="enterPasscode()">Enter CODES</button>
+            <p  hidden=""id="passcode"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://cdn.discordapp.com/attachments/1182306976710012952/1244314056303710308/3d-purple-gift-box-present-illustration-icon-for-ui-ux-web-mobile-apps-social-media-ads-designs-png.png?ex=6654a945&is=665357c5&hm=fe3540ee01a468a35162aae1c5d86c04f2677b2aa8eb2e0dcfcc0c52997cc4e8&" alt="desktop computer" />
+          </div>
+          <div class="card-content">
+            <h1>EXCLUSIVE CODES</h1>
+            <button id="exclusive">COMING SOON</button>
+            <p  hidden=""id="passcode"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
+<script>
+$("#passcode").hide();
+
+enterPasscode = () => {
+  let passcode;
+
+  while (passcode !== "noobs") {
+    passcode = prompt("ENTER THE CODE:");
+    if (passcode === null) {
+      p = `Code Invalid`;
+      break;
+    } else if (passcode !== "noobs") {
+      if (
+        confirm(
+          `CODE INVALID`
+        )
+      ) {
+        continue;
+      } else {
+        passcode = null;
+        p = `Code Invalid.`;
+        break;
+      }
+    } else {
+      alert("CODE VALID:[🎁FREE GIFT FROM CREATOR🎁]");
+      alert("10X COIN");
+      console.log("code:claimed");
+      p = `Succeafully Claimed!`;
+      break;
+    }
+  }
+  $("#passcode")
+    .text(p)
+    .slideDown(750);
+};
+</script>
+<style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css");
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #384047;
+  background-color: #0091bf;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-size: 32px;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  background-color: #4bc970;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #3ac162;
+  border-color: #4bc970;
+}
+
+.card .card-image img {
+  padding: 20px;
+  margin-top: 10%;
+}
+#exclusive {
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  background-color: #A569BD;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #6C3483;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+</style>
